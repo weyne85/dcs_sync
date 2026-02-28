@@ -36,6 +36,10 @@
     "country",
     "AI",
     "radio",
+    "@param",
+    "Unit",
+    "ZoneCaptureCoalition",
+    "Protect",
 
     // Your frameworks
     "mist",
@@ -53,7 +57,24 @@
     "hint.paramType": true,
     "diagnostics.disable": [
         "need-check-nil",
-        "trailing-space"
+        "trailing-space",
+        "duplicate-set-field",
+        "undefined-global",
+        "param-type-mismatch",
+        "assign-type-mismatch",
+        "cast-local-type",
+        "undefined-field",
+        "redundant-parameter",
+        "missing-fields",
+        "missing-parameter",
+        "redundant-return-value",
+        "redundant-value",
+        "ambiguity-1",
+        "inject-field",
+        "unbalanced-assignments",
+        "discard-returns",
+        "undefined-doc-name",
+        "undefined-doc-param"
     ],
 
   "format.enable": true

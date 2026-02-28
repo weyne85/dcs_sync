@@ -2,7 +2,7 @@
     "Lua.workspace.ignoreSubmodules": false,
     "Lua.workspace.ignoreDir": [
         ".vscode",
-        "D:\\Nextcloud\\DCS-MissionCreating\\Libraries\\MOOSE-master-ng\\Moose Development\\Debugger"
+        "D:\\Nextcloud\\DCS-MissionCreating\\Libraries\\MOOSE-master-ng\\Moose Development"
     ],
     "Lua.workspace.library": [
         "D:\\Nextcloud\\DCS-MissionCreating\\Libraries\\DCS-Scripting-Library-Updated-main",

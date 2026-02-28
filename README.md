@@ -40,34 +40,35 @@ Jetzt verbinden wir deinen Ordner mit Git.
 **Navigiere im Terminal in deinen Projektordner:**
 cd "C:\Pfad\zu\deinem\Projekt"
 
-**Git initialisieren:**
+- **Git initialisieren:**
 `
 git init (Das erstellt einen versteckten .git Ordner).
 `
-**Dateien hinzufügen:**
+- **Dateien hinzufügen:**
 `
 git add . (Der Punkt bedeutet: "Nimm alle Dateien in diesem Ordner").
 `
-**Erster Speicherpunkt (Commit):**
+# **Erster Speicherpunkt (Commit):**
 `
 git commit -m "Erster Upload meines Projekts"
 `
 ## 5. Projekt zu GitHub hochladen (Push)
 Nun verknüpfen wir deinen PC mit dem Online-Speicherplatz.
 
-**Haupt-Branch festlegen:**
+- **Haupt-Branch festlegen:**
 `
 git branch -M main
 `
-**Remote-Ziel hinzufügen:**
+- **Remote-Ziel hinzufügen:**
 `
 git remote add origin https://github.com/DEIN-NUTZERNAME/DEIN-REPO.git (Hier die kopierte URL einfügen).
 `
-**Hochladen:**
+- **Hochladen:**
 `
 git push -u origin main
 `
 Hinweis: Windows wird dich nun wahrscheinlich nach einem Login fragen. Ein Browserfenster öffnet sich, in dem du GitHub den Zugriff erlaubst. Das musst du nur einmal machen.
+
 
 # Zusammenfassung der Befehle
 Wenn du in Zukunft Änderungen an deinen Skripten machst, ist der Ablauf immer dieser "Dreisatz":

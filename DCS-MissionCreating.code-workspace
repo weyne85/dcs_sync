@@ -1,0 +1,21 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"Lua.workspace.library": [
+			"D:\\Nextcloud\\DCS-MissionCreating\\Libraries\\DCS-Scripting-Library-Updated-main",
+			"D:\\Nextcloud\\DCS-MissionCreating\\Libraries\\MissionScriptingTools",
+			"D:\\Nextcloud\\DCS-MissionCreating\\Libraries\\MOOSE-master-ng\\Moose Development\\Moose"
+		],
+		"Lua.workspace.ignoreSubmodules": false,
+		"Lua.workspace.ignoreDir": [
+			".vscode",
+			"D:\\Nextcloud\\DCS-MissionCreating\\Libraries\\MOOSE-master-ng\\Moose Development\\Debugger"
+		],
+		"Lua.workspace.preloadFileSize": 5000,
+		"Lua.runtime.version": "Lua 5.2"
+	}
+}

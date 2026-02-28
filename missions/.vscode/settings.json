@@ -1,0 +1,10 @@
+{
+    "Lua.runtime.version": "Lua 5.1",
+    "Lua.workspace.preloadFileSize": 50000,
+    
+    "workspace.library": [
+        "C:/Users/Hausmeister/Nextcloud/DCS-MissionCreating/addons/DCS-Scripting-Library-Updated-main",
+        "C:/Users/Hausmeister/Nextcloud/DCS-MissionCreating/addons/MissionScriptingTools",
+        "C:/Users/Hausmeister/Nextcloud/DCS-MissionCreating/addons/Moose"
+  ]
+}

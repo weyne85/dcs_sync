@@ -1,0 +1,29 @@
+{
+  "runtime.version": "Lua 5.1",
+
+  "workspace.library": [
+    "C:/Users/Hausmeister/Nextcloud/DCS-MissionCreating/addons/dcs-lua-definitions/library",
+    "C:/Users/Hausmeister/Nextcloud/DCS-MissionCreating/addons/Moose",
+    "C:/Users/Hausmeister/Nextcloud/DCS-MissionCreating/addons/MissionScriptingTools"
+  ],
+
+  "workspace.userThirdParty": [
+    "C:/Users/Hausmeister/Nextcloud/DCS-MissionCreating/addons"
+  ],
+
+  // Optional but nice: reduces noise in many Lua codebases
+  "diagnostics.disable": [
+    "trailing-space"
+  ],
+
+  "diagnostics.globals": [
+    // DCS core
+    "env", "trigger", "timer", "world", "coalition",
+    "Unit", "Group", "StaticObject", "Airbase", "Weapon",
+    "missionCommands", "AI",
+    "mist",
+    "BASE", "CALLSIGN"
+  ],
+
+  "format.enable": true
+}

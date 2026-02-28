@@ -1,0 +1,709 @@
+--[[
+    Script by Tobias00723                          ████████
+    from the TGFB server                      ████████  ████████
+    Discord : https://discord.gg/hEHd4A3czx ██████          ██████
+    any questions?                   ^^   ████     ▒      ▒     █████
+    find me on my discord server     ^^ ████      ▒▒      ▒▒▒      ███
+    _________________________________ ████       ▒▒▒      ▒▒▒       ███
+                                      ███       ▒▒▒▒      ▒▒▒▒       ███
+                                     ██       ▒▒▒▒        ▒▒▒▒▒      ███
+                                    ███      ▒▒▒▒▒▒        ▒▒▒▒▒▒      ███
+        Script as is.               ███     ▓▒▒▒▒▒▒        ▒▒▒▒▒▒▒     ███
+                                    ███    ▒▒▒▒▒▒▒▒        ▓▒▒▒▒▒▒▓    ███
+        Enjoy The open sauce!       ███   ▓▒▒▓▒▒▓▒▓         ▒▒▓▒▒▒▒▒   ███
+                                    ███  ▓▒▓▓▒▓▓▒▓          ▓▓▒▓▓▓▓▓▓  ███
+   If used credit, is appreaciated.  █  ▓▓▓▒▓ ▓▓▓▒          ▓▓▓▓ ▒▓▒▓▓  █
+        Happy "borrowing" :)           ▓▓▓▓    ▓▓▓   ████    ▓▓▓   ▓▓▓▓
+    _________________________________ ▓▓▓      ▓▓    ▓▓▓▓    ▓▓      ▓▓▓
+                                     ▓▓        ▓▓    ▓▓▓▓    ▓▓        ▓▓
+                                    ▓▓          ▓    ▓▓▓▓     ▓         ▓▓
+    Copyright (c) 2025 TGFB                          ▓▓▓▓
+    All rights reserved.                             ▓▓▓▓
+]]
+
+
+do
+    ---@meta
+
+    --classes
+    do
+        --- **/ALIAS\** liquidType
+
+        do
+            ---@alias liquidType
+            ---| 0 jetfuel
+            ---| 1 Aviation gasoline
+            ---| 2 MW50
+            ---| 3 Diesel
+        end
+
+        ---**/ALIAS\** All Weapon Typenames
+        do
+            ---@alias wsType
+            ---|  "weapons.containers.SPRD_99Twin"
+            ---|  "weapons.nurs.ARF8M3HEI"
+            ---|  "weapons.nurs.ARF8M3TPSM"
+            ---|  "weapons.nurs.HVAR"
+            ---|  "weapons.nurs.HYDRA_70_M229"
+            ---|  "weapons.nurs.C_8CM"
+            ---|  "weapons.nurs.S-24A"
+            ---|  "weapons.nurs.C_8CM_YE"
+            ---|  "weapons.torpedoes.mk46torp_name"
+            ---|  "weapons.torpedoes.LTF_5B"
+            ---|  "weapons.shells.MG_13x64_APT"
+            ---|  "weapons.shells.M61_20_HE_gr"
+            ---|  "weapons.torpedoes.Mark_46"
+            ---|  "weapons.shells.M383"
+            ---|  "weapons.shells.ZTZ_14_5"
+            ---|  "weapons.shells.PINK_PROJECTILE"
+            ---|  "weapons.shells.2A38_30_HE"
+            ---|  "weapons.nurs.PG_16V"
+            ---|  "weapons.nurs.British_HE_60LBFNo1_3INCHNo1"
+            ---|  "weapons.nurs.C_8OM"
+            ---|  "weapons.nurs.S_5M"
+            ---|  "weapons.nurs.SNEB_TYPE253_F1B"
+            ---|  "weapons.nurs.C_8CM_BU"
+            ---|  "weapons.nurs.ARAKM70BHE"
+            ---|  "weapons.nurs.C_8CM_GN"
+            ---|  "weapons.nurs.R4M"
+            ---|  "weapons.nurs.S-25-O"
+            ---|  "weapons.nurs.M26"
+            ---|  "weapons.nurs.FFAR Mk1 HE"
+            ---|  "weapons.nurs.S-24B"
+            ---|  "weapons.nurs.RS-82"
+            ---|  "weapons.nurs.HYDRA_70_M257"
+            ---|  "weapons.nurs.C_13"
+            ---|  "weapons.nurs.HYDRA_70_M259"
+            ---|  "weapons.shells.AK100_100"
+            ---|  "weapons.shells.50Browning_T_M1"
+            ---|  "weapons.shells.7_92x57_Smkl"
+            ---|  "weapons.shells.GSH_23_HE"
+            ---|  "weapons.shells.Br303"
+            ---|  "weapons.shells.M339_120mm_HEAT_MP_T"
+            ---|  "weapons.shells.DM33_120_AP"
+            ---|  "weapons.shells.L31A7_HESH"
+            ---|  "weapons.shells.2A38_30_AP"
+            ---|  "weapons.shells.M230_ADEM/DEFA"
+            ---|  "weapons.shells.75mm_AA_JAP"
+            ---|  "weapons.shells.AK176_76"
+            ---|  "weapons.shells.PLZ_155_HE"
+            ---|  "weapons.shells.MK45_127"
+            ---|  "weapons.shells.50Browning_APIT_M20_Corsair"
+            ---|  "weapons.shells.25mm_AA_JAP"
+            ---|  "weapons.shells.DEFA553_30HE"
+            ---|  "weapons.shells.UOF_17_100HE"
+            ---|  "weapons.shells.M61_20_AP"
+            ---|  "weapons.shells.L14A2_30_APDS"
+            ---|  "weapons.shells.2A42_30_HE"
+            ---|  "weapons.shells.57mm_Type_90_JAP"
+            ---|  "weapons.shells.NR23_23x115_HEI_T"
+            ---|  "weapons.shells.MK_108_HEI"
+            ---|  "weapons.shells.DEFA553_30APIT"
+            ---|  "weapons.shells.M39_20_HEI"
+            ---|  "weapons.shells.M2_12_7_TG"
+            ---|  "weapons.shells.GSh_30_2K_AP"
+            ---|  "weapons.shells.7_62x51tr"
+            ---|  "weapons.shells.50Browning_AP_M2"
+            ---|  "weapons.shells.MK45_127mm_AP_Essex"
+            ---|  "weapons.shells.CHAP_76_PFHE"
+            ---|  "weapons.shells.BK_27"
+            ---|  "weapons.shells.L23A1_APFSDS"
+            ---|  "weapons.shells.DEFA553_30AP"
+            ---|  "weapons.nurs.FFAR Mk5 HEAT"
+            ---|  "weapons.nurs.C_5"
+            ---|  "weapons.nurs.SNEB_TYPE254_H1_YELLOW"
+            ---|  "weapons.nurs.HVAR USN Mk28 Mod4"
+            ---|  "weapons.nurs.URAGAN_9M27F"
+            ---|  "weapons.nurs.MO_10104M"
+            ---|  "weapons.nurs.HYDRA_70_MK5"
+            ---|  "weapons.nurs.C_8"
+            ---|  "weapons.nurs.HYDRA_70_M156"
+            ---|  "weapons.nurs.AGR_20_M151_unguided"
+            ---|  "weapons.nurs.C_8CM_WH"
+            ---|  "weapons.nurs.AGR_20_M282_unguided"
+            ---|  "weapons.nurs.S5MO_HEFRAG_FFAR"
+            ---|  "weapons.nurs.SNEB_TYPE254_F1B_GREEN"
+            ---|  "weapons.nurs.SNEB_TYPE253_H1"
+            ---|  "weapons.nurs.SNEB_TYPE252_H1"
+            ---|  "weapons.nurs.C_8CM_VT"
+            ---|  "weapons.nurs.HYDRA_70_M274"
+            ---|  "weapons.nurs.GRAD_9M22U"
+            ---|  "weapons.nurs.HYDRA_70_WTU1B"
+            ---|  "weapons.missiles.AIM_120"
+            ---|  "weapons.missiles.AGM_84A"
+            ---|  "weapons.missiles.BK90_MJ2"
+            ---|  "weapons.missiles.AGM_65A"
+            ---|  "weapons.missiles.AGM_84E"
+            ---|  "weapons.missiles.X_29T"
+            ---|  "weapons.nurs.ARF8M3API"
+            ---|  "weapons.nurs.90-1_HE_Rocket"
+            ---|  "weapons.nurs.SMERCH_9M55F"
+            ---|  "weapons.nurs.HYDRA_70_M151_M433"
+            ---|  "weapons.nurs.C_8CM_RD"
+            ---|  "weapons.nurs.British_AP_25LBNo1_3INCHNo1"
+            ---|  "weapons.nurs.BRM1_90MM_UG"
+            ---|  "weapons.nurs.S5M1_HEFRAG_FFAR"
+            ---|  "weapons.nurs.FFAR M156 WP"
+            ---|  "weapons.nurs.British_HE_60LBSAPNo2_3INCHNo1"
+            ---|  "weapons.nurs.M8rocket"
+            ---|  "weapons.nurs.FFAR_Mk61"
+            ---|  "weapons.nurs.SNEB_TYPE254_H1_GREEN"
+            ---|  "weapons.nurs.ARAKM70BAP"
+            ---|  "weapons.nurs.SNEB_TYPE254_H1_RED"
+            ---|  "weapons.nurs.SNEB_TYPE256_H1"
+            ---|  "weapons.nurs.WGr21"
+            ---|  "weapons.nurs.SNEB_TYPE257_F1B"
+            ---|  "weapons.nurs.SNEB_TYPE254_F1B_YELLOW"
+            ---|  "weapons.nurs.SNEB_TYPE254_F1B_RED"
+            ---|  "weapons.nurs.SNEB_TYPE252_F1B"
+            ---|  "weapons.nurs.SNEB_TYPE250_F1B"
+            ---|  "weapons.nurs.S_5KP"
+            ---|  "weapons.nurs.S-5M"
+            ---|  "weapons.nurs.C_8OFP2"
+            ---|  "weapons.nurs.C_24"
+            ---|  "weapons.nurs.HYDRA_70_M151"
+            ---|  "weapons.nurs.SNEB_TYPE257_H1"
+            ---|  "weapons.nurs.PG_9V"
+            ---|  "weapons.nurs.SNEB_TYPE251_F1B"
+            ---|  "weapons.nurs.SNEB_TYPE259E_F1B"
+            ---|  "weapons.nurs.Zuni_127"
+            ---|  "weapons.nurs.HYDRA_70_M282"
+            ---|  "weapons.nurs.HYDRA_70_MK1"
+            ---|  "weapons.nurs.SNEB_TYPE251_H1"
+            ---|  "weapons.nurs.SMERCH_9M55K"
+            ---|  "weapons.nurs.ARAKM70BAPPX"
+            ---|  "weapons.nurs.SNEB_TYPE256_F1B"
+            ---|  "weapons.nurs.C_25"
+            ---|  "weapons.nurs.HYDRA_70_MK61"
+            ---|  "weapons.nurs.SNEB_TYPE259E_H1"
+            ---|  "weapons.nurs.Tiny Tim"
+            ---|  "weapons.nurs.M26HE"
+            ---|  "weapons.missiles.AGM_12C_ED"
+            ---|  "weapons.shells.ZTZ_125_HE"
+            ---|  "weapons.shells.M242_25_AP_M919"
+            ---|  "weapons.shells.NR30_30x155_APHE"
+            ---|  "weapons.shells.KPVT_14_5"
+            ---|  "weapons.shells.GSh_30_2K_HE"
+            ---|  "weapons.shells.Bofors_40mm_HE"
+            ---|  "weapons.shells.L31_120mm_HESH"
+            ---|  "weapons.shells.N37_37x155_API_T"
+            ---|  "weapons.shells.M230_HEDP M789"
+            ---|  "weapons.shells.M46"
+            ---|  "weapons.shells.Hispano_Mk_II_Mk_Z_Ball"
+            ---|  "weapons.shells.GSh_30_2K_HE_Tr"
+            ---|  "weapons.shells.Hispano_Mk_II_Tracer_G"
+            ---|  "weapons.shells.20mm_M70LD_SAPHEI"
+            ---|  "weapons.shells.HEDPM430"
+            ---|  "weapons.shells.Hispano_Mk_II_MKI_HE/I"
+            ---|  "weapons.shells.Hispano_Mk_II_MKIIZ_AP"
+            ---|  "weapons.shells.Mauser7.92x57_P.m.K."
+            ---|  "weapons.shells.MINGR55"
+            ---|  "weapons.shells.M246_20_HE_gr"
+            ---|  "weapons.shells.2A46M_125_HE"
+            ---|  "weapons.shells.MG_20x82_MGsch"
+            ---|  "weapons.shells.MK_108_MGsch"
+            ---|  "weapons.shells.M242_25_AP_M791"
+            ---|  "weapons.shells.M61_20_HEIT_RED"
+            ---|  "weapons.shells.PGU32_SAPHEI_T"
+            ---|  "weapons.shells.M39_20_API"
+            ---|  "weapons.shells.KPVT_14_5_T"
+            ---|  "weapons.shells.K307_155HE"
+            ---|  "weapons.shells.76mm_AA_JAP"
+            ---|  "weapons.shells.M61"
+            ---|  "weapons.shells.M393A3_105_HE"
+            ---|  "weapons.shells.British303_G_Mk5"
+            ---|  "weapons.shells.2A60_120"
+            ---|  "weapons.shells.M825A1_155_SM"
+            ---|  "weapons.shells.GSH_23_AP"
+            ---|  "weapons.shells.Rh202_20_AP"
+            ---|  "weapons.shells.5_45x39_NOtr"
+            ---|  "weapons.shells.2A33_152"
+            ---|  "weapons.shells.120_EXPL_F1_120mm_HE"
+            ---|  "weapons.shells.20MM_M242_HEI-T"
+            ---|  "weapons.shells.KS19_100AP"
+            ---|  "weapons.shells.British303_Ball_Mk7"
+            ---|  "weapons.shells.GAU8_30_TP"
+            ---|  "weapons.shells.MG_13x64_API"
+            ---|  "weapons.shells.50Browning_API_M8_Corsair"
+            ---|  "weapons.shells.2A18_122"
+            ---|  "weapons.shells.DM23_105_AP"
+            ---|  "weapons.shells.50Browning_I_M1"
+            ---|  "weapons.shells.5_45x39"
+            ---|  "weapons.shells.2A46M_125_AP"
+            ---|  "weapons.shells.BR_354N"
+            ---|  "weapons.shells.Rh202_20_HE"
+            ---|  "weapons.shells.M39_20_TP"
+            ---|  "weapons.shells.2A64_152"
+            ---|  "weapons.shells.Hispano_Mk_II_SAP/I"
+            ---|  "weapons.shells.DM12_L55_120mm_HEAT_MP_T"
+            ---|  "weapons.shells.ZTZ_125_AP"
+            ---|  "weapons.shells.5_56x45_NOtr"
+            ---|  "weapons.shells.DM53_120_AP"
+            ---|  "weapons.shells.M39_20_TP_T"
+            ---|  "weapons.shells.HESH_105"
+            ---|  "weapons.shells.Bofors_40mm_Essex"
+            ---|  "weapons.shells.CHAP_76_HESH_T"
+            ---|  "weapons.shells.ship_Bofors_40mm_HE"
+            ---|  "weapons.shells.NR30_30x155_APT"
+            ---|  "weapons.shells.7_7mm_Type_97_JAP"
+            ---|  "weapons.shells.5_56x45"
+            ---|  "weapons.shells.NR23_23x115_API"
+            ---|  "weapons.shells.KDA_35_AP"
+            ---|  "weapons.shells.L21A1_30_HE"
+            ---|  "weapons.shells.M256_120_HE"
+            ---|  "weapons.shells.2A42_30_AP"
+            ---|  "weapons.shells.British303_W_Mk1z"
+            ---|  "weapons.shells.OFL_120F2_AP"
+            ---|  "weapons.shells.6_5mm_Type_91_JAP"
+            ---|  "weapons.shells.British303_B_Mk6z"
+            ---|  "weapons.shells.7_92x57sS"
+            ---|  "weapons.shells.DANA_152"
+            ---|  "weapons.shells.M322_120_AP"
+            ---|  "weapons.shells.MG_20x82_HEI_T"
+            ---|  "weapons.shells.Oerlikon_20mm_Essex"
+            ---|  "weapons.shells.M61_20_PGU30"
+            ---|  "weapons.shells.53-UBR-281U"
+            ---|  "weapons.shells.PJ87_100_PFHE"
+            ---|  "weapons.shells.20mm_M53_API"
+            ---|  "weapons.shells.M68_105_HE"
+            ---|  "weapons.shells.2A7_23_AP"
+            ---|  "weapons.shells.OF_350"
+            ---|  "weapons.shells.Pzgr_39/40"
+            ---|  "weapons.shells.M61_20_HE_INVIS"
+            ---|  "weapons.shells.M185_155"
+            ---|  "weapons.shells.M61_20_TP"
+            ---|  "weapons.shells.KDA_35_HE"
+            ---|  "weapons.shells.UOF412_100HE"
+            ---|  "weapons.shells.3UBM11_100mm_AP"
+            ---|  "weapons.shells.CL3143_120_AP"
+            ---|  "weapons.shells.M230_HEI M799"
+            ---|  "weapons.shells.Hispano_Mk_II_AP/T"
+            ---|  "weapons.shells.Mauser7.92x57_S.m.K.H."
+            ---|  "weapons.shells.MK_108_MGsch_T"
+            ---|  "weapons.shells.M2_12_7"
+            ---|  "weapons.shells.A222_130"
+            ---|  "weapons.shells.37mm_Type_100_JAP"
+            ---|  "weapons.shells.M256_120_AP"
+            ---|  "weapons.shells.CHAP_125_3BM69_APFSDS_T"
+            ---|  "weapons.shells.53-UOR-281U"
+            ---|  "weapons.shells.MG_13x64_I_T"
+            ---|  "weapons.shells.N37_37x155_HEI_T"
+            ---|  "weapons.shells.DEFA554_30_HE_TRACERS"
+            ---|  "weapons.shells.Flak18_Sprgr_39"
+            ---|  "weapons.shells.MK45_127mm_Essex"
+            ---|  "weapons.shells.MINGR55_NO_TRC"
+            ---|  "weapons.shells.Mauser7.92x57_B."
+            ---|  "weapons.shells.20mm_M56_HEI"
+            ---|  "weapons.shells.MG_13x64_HEI_T"
+            ---|  "weapons.shells.M68_105_AP"
+            ---|  "weapons.shells.MG_13x64_I"
+            ---|  "weapons.shells.MG_13x64_HE"
+            ---|  "weapons.shells.L23_120_AP"
+            ---|  "weapons.shells.50Browning_Ball_M2"
+            ---|  "weapons.shells.PJ26_76_PFHE"
+            ---|  "weapons.shells.GSh_30_2K_AP_Tr"
+            ---|  "weapons.shells.Mauser7.92x57_S.m.K._L'spur(gelb)"
+            ---|  "weapons.shells.Sprgr_34_L48"
+            ---|  "weapons.shells.M242_25_HE_M792"
+            ---|  "weapons.shells.M485_155_IL"
+            ---|  "weapons.shells.M230_TP M788"
+            ---|  "weapons.shells.M61_20_PGU27"
+            ---|  "weapons.shells.British303_O_Mk1"
+            ---|  "weapons.shells.Mauser7.92x57_S.m.K."
+            ---|  "weapons.shells.GSH23_23_HE"
+            ---|  "weapons.shells.2A28_73"
+            ---|  "weapons.shells.3BM59_125_AP"
+            ---|  "weapons.shells.M61_20_PGU28"
+            ---|  "weapons.shells.Mauser7.92x57_S.m.K._L'spur(weiss)"
+            ---|  "weapons.shells.NR30_30x155_HEI_T"
+            ---|  "weapons.shells.Mauser7.92x57_S.m.K._Ub.m.Zerl."
+            ---|  "weapons.shells.M61_20_TP_T"
+            ---|  "weapons.missiles.C_701T"
+            ---|  "weapons.missiles.AGM_84H"
+            ---|  "weapons.bombs.OH58D_Yellow_Smoke_Grenade"
+            ---|  "weapons.bombs.MK_82AIR"
+            ---|  "weapons.bombs.Type_200A"
+            ---|  "weapons.bombs.AB_250_2_SD_2"
+            ---|  "weapons.bombs.British_SAP_250LB_Bomb_Mk5"
+            ---|  "weapons.bombs.Mk_84AIR_TP"
+            ---|  "weapons.bombs.AN_M66"
+            ---|  "weapons.bombs.SC_50"
+            ---|  "weapons.bombs.BETAB-500M"
+            ---|  "weapons.bombs.SAMP250HD"
+            ---|  "weapons.bombs.FAB-250M54TU"
+            ---|  "weapons.bombs.GBU_31"
+            ---|  "weapons.bombs.SAMP400HD"
+            ---|  "weapons.bombs.British_GP_500LB_Bomb_Mk4_Short"
+            ---|  "weapons.bombs.GBU_8_B"
+            ---|  "weapons.bombs.OFAB-100-120TU"
+            ---|  "weapons.bombs.RBK_500U_OAB_2_5RT"
+            ---|  "weapons.bombs.BetAB_500"
+            ---|  "weapons.bombs.BAT-120"
+            ---|  "weapons.bombs.BDU_45LGB"
+            ---|  "weapons.bombs.SAMP250LD"
+            ---|  "weapons.bombs.AN_M64"
+            ---|  "weapons.bombs.BR_500"
+            ---|  "weapons.bombs.GBU_39"
+            ---|  "weapons.bombs.FAB-500TA"
+            ---|  "weapons.bombs.SD_500_A"
+            ---|  "weapons.bombs.BDU_33"
+            ---|  "weapons.bombs.GBU_32_V_2B"
+            ---|  "weapons.bombs.250-2"
+            ---|  "weapons.bombs.FAB-250-M62"
+            ---|  "weapons.bombs.MK106"
+            ---|  "weapons.bombs.AN_M65"
+            ---|  "weapons.bombs.CBU_103"
+            ---|  "weapons.bombs.British_MC_500LB_Bomb_Mk2"
+            ---|  "weapons.bombs.OH58D_Red_Smoke_Grenade"
+            ---|  "weapons.bombs.KAB_1500Kr"
+            ---|  "weapons.bombs.M485_FLARE"
+            ---|  "weapons.bombs.M257_FLARE"
+            ---|  "weapons.bombs.ROCKEYE"
+            ---|  "weapons.bombs.OH58D_Violet_Smoke_Grenade"
+            ---|  "weapons.bombs.Mk_82"
+            ---|  "weapons.bombs.British_GP_250LB_Bomb_Mk1"
+            ---|  "weapons.bombs.HEBOMB"
+            ---|  "weapons.bombs.BKF_AO2_5RT"
+            ---|  "weapons.bombs.GBU_54_V_1B"
+            ---|  "weapons.bombs.KAB_500Kr"
+            ---|  "weapons.bombs.LYSBOMB 11087"
+            ---|  "weapons.bombs.KAB_500S"
+            ---|  "weapons.bombs.KAB_500"
+            ---|  "weapons.bombs.LUU_2B"
+            ---|  "weapons.bombs.SAB_100_FLARE"
+            ---|  "weapons.bombs.Mk_83CT"
+            ---|  "weapons.bombs.OFAB-100 Jupiter"
+            ---|  "weapons.bombs.OH58D_Green_Smoke_Grenade"
+            ---|  "weapons.bombs.MK76"
+            ---|  "weapons.bombs.AB_500_1_SD_10A"
+            ---|  "weapons.bombs.RBK_500U_BETAB_M"
+            ---|  "weapons.bombs.RN-28"
+            ---|  "weapons.bombs.BLU-3_GROUP"
+            ---|  "weapons.bombs.SAMP125LD"
+            ---|  "weapons.bombs.CBU_105"
+            ---|  "weapons.bombs.RBK_500AO"
+            ---|  "weapons.bombs.P-50T"
+            ---|  "weapons.bombs.FAB_50"
+            ---|  "weapons.bombs.RBK_250_275_AO_1SCH"
+            ---|  "weapons.bombs.GBU_15_V_1_B"
+            ---|  "weapons.bombs.RBK_500U"
+            ---|  "weapons.bombs.KAB_1500T"
+            ---|  "weapons.bombs.GBU_12"
+            ---|  "weapons.bombs.BL_755"
+            ---|  "weapons.bombs.Mk_83"
+            ---|  "weapons.bombs.Mk_84"
+            ---|  "weapons.bombs.BEER_BOMB"
+            ---|  "weapons.bombs.GBU_15_V_31_B"
+            ---|  "weapons.bombs.GBU_31_V_2B"
+            ---|  "weapons.bombs.M_117"
+            ---|  "weapons.bombs.SAB_250_200"
+            ---|  "weapons.bombs.CBU_87"
+            ---|  "weapons.bombs.FAB-500M54"
+            ---|  "weapons.bombs.British_GP_500LB_Bomb_Mk4"
+            ---|  "weapons.bombs.GBU_27"
+            ---|  "weapons.bombs.BLU-4B_GROUP"
+            ---|  "weapons.bombs.BLG66"
+            ---|  "weapons.bombs.BLU-3B_GROUP"
+            ---|  "weapons.bombs.British_MC_500LB_Bomb_Mk1_Short"
+            ---|  "weapons.bombs.OH58D_Blue_Smoke_Grenade"
+            ---|  "weapons.bombs.LYSBOMB_CANDLE"
+            ---|  "weapons.bombs.RBK_250"
+            ---|  "weapons.bombs.GBU_28"
+            ---|  "weapons.bombs.Mk_82Y"
+            ---|  "weapons.bombs.Mk_84AIR_GP"
+            ---|  "weapons.bombs.British_GP_250LB_Bomb_Mk5"
+            ---|  "weapons.bombs.FAB_100SV"
+            ---|  "weapons.bombs.SD_250_Stg"
+            ---|  "weapons.bombs.ODAB-500PM"
+            ---|  "weapons.bombs.BDU_50HD"
+            ---|  "weapons.bombs.BR_250"
+            ---|  "weapons.bombs.British_MC_250LB_Bomb_Mk2"
+            ---|  "weapons.bombs.British_GP_500LB_Bomb_Mk1"
+            ---|  "weapons.bombs.GBU_16"
+            ---|  "weapons.bombs.MK_82SNAKEYE"
+            ---|  "weapons.bombs.AB_250_2_SD_10A"
+            ---|  "weapons.bombs.BETAB-500S"
+            ---|  "weapons.bombs.British_GP_250LB_Bomb_Mk4"
+            ---|  "weapons.bombs.SC_250_T1_L2"
+            ---|  "weapons.bombs.SC_500_J"
+            ---|  "weapons.bombs.CBU_99"
+            ---|  "weapons.bombs.HEBOMBD"
+            ---|  "weapons.bombs.S_8OM_FLARE"
+            ---|  "weapons.bombs.FAB_500"
+            ---|  "weapons.bombs.FAB_100M"
+            ---|  "weapons.bombs.OH58D_White_Smoke_Grenade"
+            ---|  "weapons.bombs.British_MC_250LB_Bomb_Mk1"
+            ---|  "weapons.bombs.GBU_38"
+            ---|  "weapons.bombs.BKF_PTAB2_5KO"
+            ---|  "weapons.bombs.BDU_50LGB"
+            ---|  "weapons.bombs.FAB_250"
+            ---|  "weapons.bombs.GBU_10"
+            ---|  "weapons.bombs.BetAB_500ShP"
+            ---|  "weapons.bombs.BDU_45"
+            ---|  "weapons.bombs.GBU_31_V_3B"
+            ---|  "weapons.bombs.IAB-500"
+            ---|  "weapons.bombs.SAB_250_FLARE"
+            ---|  "weapons.bombs.AN_M30A1"
+            ---|  "weapons.bombs.British_GP_500LB_Bomb_Mk5"
+            ---|  "weapons.bombs.SC_500_L2"
+            ---|  "weapons.bombs.FAB-250M54"
+            ---|  "weapons.bombs.LS_6_100"
+            ---|  "weapons.bombs.FAB_1500"
+            ---|  "weapons.bombs.AGM_62_I"
+            ---|  "weapons.bombs.FAB_100"
+            ---|  "weapons.bombs.Mk_81"
+            ---|  "weapons.bombs.RN-24"
+            ---|  "weapons.bombs.BDU_45B"
+            ---|  "weapons.bombs.AGM_62"
+            ---|  "weapons.bombs.British_SAP_500LB_Bomb_Mk5"
+            ---|  "weapons.bombs.BDU_50LD"
+            ---|  "weapons.missiles.9M723"
+            ---|  "weapons.bombs.SAMP400LD"
+            ---|  "weapons.bombs.GBU_31_V_4B"
+            ---|  "weapons.missiles.X_59M"
+            ---|  "weapons.missiles.AGM_154A"
+            ---|  "weapons.missiles.AGM_65D"
+            ---|  "weapons.missiles.HOT3_MBDA"
+            ---|  "weapons.missiles.AGM_45B"
+            ---|  "weapons.missiles.M31"
+            ---|  "weapons.missiles.X_31A"
+            ---|  "weapons.missiles.P_9M117"
+            ---|  "weapons.missiles.X_25MP"
+            ---|  "weapons.missiles.Rb 04E (for A.I.)"
+            ---|  "weapons.missiles.AGM_86"
+            ---|  "weapons.missiles.P_9M133"
+            ---|  "weapons.missiles.Igla_1E"
+            ---|  "weapons.missiles.Sea_Dart"
+            ---|  "weapons.missiles.9M723_HE"
+            ---|  "weapons.missiles.Rapier"
+            ---|  "weapons.missiles.ALARM"
+            ---|  "weapons.missiles.AGM_154"
+            ---|  "weapons.missiles.Sea_Wolf"
+            ---|  "weapons.missiles.YJ-12"
+            ---|  "weapons.missiles.X_65"
+            ---|  "weapons.missiles.BK90_MJ1_MJ2"
+            ---|  "weapons.missiles.AGM_65E"
+            ---|  "weapons.missiles.ASM_N_2"
+            ---|  "weapons.missiles.TOW2"
+            ---|  "weapons.missiles.AGM_12A"
+            ---|  "weapons.missiles.AGM_65F"
+            ---|  "weapons.missiles.C_802AK"
+            ---|  "weapons.missiles.ADM_141A"
+            ---|  "weapons.missiles.RIM_116A"
+            ---|  "weapons.missiles.SPIKE_ERA"
+            ---|  "weapons.missiles.C_701IR"
+            ---|  "weapons.missiles.AIM-7F"
+            ---|  "weapons.missiles.AGM_154B"
+            ---|  "weapons.missiles.Ataka_9M220"
+            ---|  "weapons.missiles.AGM_12B"
+            ---|  "weapons.missiles.M48"
+            ---|  "weapons.missiles.AGM_78B"
+            ---|  "weapons.missiles.SCUD_RAKETA"
+            ---|  "weapons.missiles.FIM_92C"
+            ---|  "weapons.missiles.LS_6_500"
+            ---|  "weapons.missiles.M39A1"
+            ---|  "weapons.missiles.X_58"
+            ---|  "weapons.missiles.X_29L"
+            ---|  "weapons.missiles.DWS39_MJ1_MJ2"
+            ---|  "weapons.missiles.AGM_84S"
+            ---|  "weapons.missiles.AIM-7MH"
+            ---|  "weapons.missiles.RB75T"
+            ---|  "weapons.missiles.KD_63B"
+            ---|  "weapons.missiles.AGR_20A"
+            ---|  "weapons.missiles.Ataka_9M120"
+            ---|  "weapons.missiles.LD-10"
+            ---|  "weapons.missiles.PL-12"
+            ---|  "weapons.missiles.YJ-82"
+            ---|  "weapons.missiles.YJ-62"
+            ---|  "weapons.missiles.BRM-1_90MM"
+            ---|  "weapons.missiles.AT_6"
+            ---|  "weapons.missiles.KD_63"
+            ---|  "weapons.missiles.KD_20"
+            ---|  "weapons.missiles.HB-AIM-7E"
+            ---|  "weapons.missiles.LS_6"
+            ---|  "weapons.missiles.SPIKE_ER"
+            ---|  "weapons.missiles.HOT2"
+            ---|  "weapons.missiles.SPIKE_ER2"
+            ---|  "weapons.missiles.X_28"
+            ---|  "weapons.missiles.SeaSparrow"
+            ---|  "weapons.missiles.CM_802AKG"
+            ---|  "weapons.bombs.BIN_200"
+            ---|  "weapons.missiles.AIM_120C"
+            ---|  "weapons.missiles.AGM_65L"
+            ---|  "weapons.missiles.BGM_109B"
+            ---|  "weapons.missiles.AGM_84D"
+            ---|  "weapons.missiles.X_35"
+            ---|  "weapons.missiles.AGM_122"
+            ---|  "weapons.missiles.ADM_141B"
+            ---|  "weapons.missiles.AGM_78A"
+            ---|  "weapons.missiles.Kh25MP_PRGS1VP"
+            ---|  "weapons.missiles.AGM_88"
+            ---|  "weapons.missiles.AKD-10"
+            ---|  "weapons.missiles.SD-10"
+            ---|  "weapons.missiles.Ataka_9M120F"
+            ---|  "weapons.missiles.X_25ML"
+            ---|  "weapons.missiles.AIM-7P"
+            ---|  "weapons.missiles.X_101"
+            ---|  "weapons.missiles.GB-6-SFW"
+            ---|  "weapons.missiles.Matra Super 530D"
+            ---|  "weapons.missiles.X_555"
+            ---|  "weapons.missiles.Rb_04"
+            ---|  "weapons.bombs.BLG66_EG"
+            ---|  "weapons.bombs.FAB-500M54TU"
+            ---|  "weapons.bombs.CBU_97"
+            ---|  "weapons.bombs.HB_F4E_GBU15V1"
+            ---|  "weapons.bombs.SC_250_T3_J"
+            ---|  "weapons.bombs.GBU_24"
+            ---|  "weapons.missiles.RB75"
+            ---|  "weapons.bombs.CBU_52B"
+            ---|  "weapons.bombs.BLG66_BELOUGA"
+            ---|  "weapons.bombs.250-3"
+            ---|  "weapons.bombs.FAB-500SL"
+            ---|  "weapons.bombs.SAB_100MN"
+            ---|  "weapons.bombs.BAP_100"
+            ---|  "weapons.bombs.AN_M57"
+            ---|  "weapons.missiles.DWS39_MJ1"
+            ---|  "weapons.missiles.SVIR"
+            ---|  "weapons.missiles.X_25MR"
+            ---|  "weapons.missiles.AGM_45A"
+            ---|  "weapons.missiles.YJ-83K"
+            ---|  "weapons.missiles.MALUTKA"
+            ---|  "weapons.missiles.Rb 15F (for A.I.)"
+            ---|  "weapons.missiles.X_31P"
+            ---|  "weapons.missiles.MIM_72G"
+            ---|  "weapons.missiles.OH58D_FIM_92"
+            ---|  "weapons.missiles.HJ-12"
+            ---|  "weapons.missiles.AGM_86C"
+            ---|  "weapons.missiles.AIM-7E-2"
+            ---|  "weapons.missiles.AGM_65K"
+            ---|  "weapons.missiles.AGM_65G"
+            ---|  "weapons.missiles.KONKURS"
+            ---|  "weapons.missiles.RB75B"
+            ---|  "weapons.missiles.M30"
+            ---|  "weapons.missiles.AGM_65B"
+            ---|  "weapons.missiles.AGM_114K"
+            ---|  "weapons.missiles.AGR_20_M282"
+            ---|  "weapons.missiles.Vikhr_M"
+            ---|  "weapons.missiles.DWS39_MJ2"
+            ---|  "weapons.missiles.GB-6"
+            ---|  "weapons.missiles.Mistral"
+            ---|  "weapons.missiles.AGM_114"
+            ---|  "weapons.missiles.AGM_65H"
+            ---|  "weapons.missiles.HY-2"
+            ---|  "weapons.missiles.GB-6-HE"
+            ---|  "weapons.missiles.Sea_Cat"
+            ---|  "weapons.missiles.AGM_130"
+            ---|  "weapons.missiles.X_29TE"
+            ---|  "weapons.missiles.AIM_7"
+            ---|  "weapons.missiles.BK90_MJ1"
+            ---|  "weapons.shells.20mm_M220_Tracer"
+        end
+
+        ---recource map
+        do
+            ---@private
+            ---@class Wherehouse_recource_map
+            ---@field [1] number
+            ---@field [2] number
+            ---@field [3] number
+            ---@field [4] number
+        end
+    end
+    ---The warehouse class gives control over warehouses that exist in airbase objects. These warehouses can limit the aircraft, munitions, and fuel available to coalition aircraft.
+    ---https://wiki.hoggitworld.com/view/DCS_Class_Warehouse
+    ---@class Warehouse
+    Warehouse     = {}
+
+    ---@type number
+    Warehouse.id_ = 0
+
+
+    --Functions
+    do
+        ---Adds the passed amount of a given item to the warehouse.
+        ---itemName is the typeName associated with the item: "weapons.missiles.AIM_54C_Mk47"
+        ---A wsType table can also be used, however the last digit with wsTypes has been known to change. {4, 4, 7, 322}
+        ---https://wiki.hoggitworld.com/view/DCS_func_addItem
+        ---@param itemName string|table string or table
+        ---@param count number
+        function Warehouse.addItem( self, itemName, count ) end
+
+        ---Adds the passed amount of a liquid fuel into the warehouse inventory
+        ---https://wiki.hoggitworld.com/view/DCS_func_addLiquid
+        ---@param liquidType liquidType
+        ---@param count number number
+        function Warehouse.addLiquid( self, liquidType, count ) end
+
+        ---Returns an instance of the calling class for the object of a specified name. The objects name is defined either in the mission editor or within functions that can dynamically spawn objects. All static objects and unit names must be unique. However groups may have the same name as a unit or static object. This function can provide access to non activated units and groups.
+        ---https://wiki.hoggitworld.com/view/DCS_func_getByName
+        ---@return self?
+        ---@param name string
+        function Warehouse.getByName( name ) end
+
+        --https://wiki.hoggitworld.com/view/DCS_func_getCargoAsWarehouse
+        --Returns a warehouse object that exists within the passed Static Object cargo crate. Can be used to "physicalize" the contents of a cargo object to hold X warehouse inventory.
+        ---@param static StaticObject
+        ---@return Warehouse
+        function Warehouse.getCargoAsWarehouse( static ) end
+
+        ---Returns a full itemized list of everything currently in a warehouse. If a category is set to unlimited then the table will be returned empty.
+        ---Aircraft and weapons are indexed by strings.
+        ---https://wiki.hoggitworld.com/view/DCS_func_getInventory
+        ---@return table
+        ---@param itemName? string|table string or table
+        function Warehouse.getInventory( self, itemName ) end
+
+        ---Returns the number of the passed type of item currently in a warehouse object.
+        ---itemName is the typeName associated with the item: "weapons.missiles.AIM_54C_Mk47"
+        ---A wsType table can also be used, however the last digit with wsTypes has been known to change. {4, 4, 7, 322}
+        ---https://wiki.hoggitworld.com/view/DCS_func_getItemCount
+        ---@return number
+        ---@param itemName wsType|table<number, number> string or table
+        function Warehouse.getItemCount( self, itemName ) end
+
+        ---Returns the amount of the passed liquid type within a given warehouse.
+        ---https://wiki.hoggitworld.com/view/DCS_func_getLiquidAmount
+        ---@param liquidType liquidType
+        ---@return number
+        function Warehouse.getLiquidAmount( self, liquidType ) end
+
+        ---Returns the airbase object associated with the warehouse object
+        ---https://wiki.hoggitworld.com/view/DCS_func_getOwner
+        ---@return Airbase class
+        function Warehouse.getOwner( self ) end
+
+        ---Returns the wsType of every object that exists in DCS. A wsType is a table consisting of 4 entries indexed numerically. It can be used to broadly categorize object types. The table can be broken down as: {mainCategory, subCat1, subCat2, index}
+        ---https://wiki.hoggitworld.com/view/DCS_func_getResourceMap
+        ---@param self Warehouse
+        ---@return table<wsType, Wherehouse_recource_map>
+        function Warehouse.getResourceMap( self ) end
+
+        ---Removes the amount of the passed item from the warehouse.
+        ---itemName is the typeName associated with the item: "weapons.missiles.AIM_54C_Mk47"
+        ---A wsType table can also be used, however the last digit with wsTypes has been known to change. {4, 4, 7, 322}
+        ---https://wiki.hoggitworld.com/view/DCS_func_removeItemWarehouse
+        ---@param itemName string|table string or table
+        ---@param count number number
+        function Warehouse.removeItem( self, itemName, count ) end
+
+        ---Removes the set amount of liquid from the inventory in a warehouse.
+        ---https://wiki.hoggitworld.com/view/DCS_func_removeLiquid
+        ---@param liquidType liquidType
+        ---@param count number number
+        function Warehouse.removeLiquid( self, liquidType, count ) end
+
+        ---Sets the passed amount of a given item to the warehouse.
+        ---itemName is the typeName associated with the item: "weapons.missiles.AIM_54C_Mk47"
+        ---A wsType table can also be used, however the last digit with wsTypes has been known to change. {4, 4, 7, 322}
+        ---https://wiki.hoggitworld.com/view/DCS_func_setItem
+        ---@param itemName string|table string or table
+        ---@param count number
+        function Warehouse.setItem( self, itemName, count ) end
+
+        ---Adds the passed amount of a liquid fuel into the warehouse inventory
+        ---https://wiki.hoggitworld.com/view/DCS_func_addLiquid
+        ---@param liquidType liquidType
+        ---@param count number number
+        function Warehouse.setLiquidAmount( self, liquidType, count ) end
+    end
+end

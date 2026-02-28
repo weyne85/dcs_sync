@@ -1,0 +1,58 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+
+  // DCS is widely treated as Lua 5.1 in the community; set LuaLS accordingly
+  "runtime.version": "Lua 5.1",  
+
+  // Explicit libraries (MOOSE + MIST + (optionally) dcs-lua-definitions library folder)
+  // Use forward slashes in JSON paths on Windows.
+  "workspace.library": [
+    "C:/Users/Hausmeister/Nextcloud/DCS-MissionCreating/addons/DCS-Scripting-Library-Updated-main",
+    "C:/Users/Hausmeister/Nextcloud/DCS-MissionCreating/addons/Moose",
+    "C:/Users/Hausmeister/Nextcloud/DCS-MissionCreating/addons/MissionScriptingTools"
+  ],
+
+  // Avoid constant prompts about third-party libs (optional)
+  "workspace.checkThirdParty": "Apply",
+
+  // Declare known DCS/MOOSE/MIST global names so "Undefined global" noise goes away
+  "diagnostics.globals": [
+    // DCS Singletons commonly documented
+    "env",
+    "timer",
+    "land",
+    "atmosphere",
+    "world",
+    "coalition",
+    "trigger",
+    "coord",
+    "missionCommands",
+    "airboss",
+
+    // DCS Enumerators commonly documented
+    "country",
+    "AI",
+    "radio",
+
+    // Your frameworks
+    "mist",
+
+    // Common MOOSE global you mentioned
+    "CALLSIGN",
+    "SPAWN",
+    "AIRBOSS",
+        "fouldist"
+  ],
+    "hover.enable": true,
+    "hover.previewFields": 50,
+    "hint.enable": true,
+    "hint.paramName": "All",
+    "hint.paramType": true,
+    "diagnostics.disable": [
+        "need-check-nil",
+        "trailing-space"
+    ],
+
+  "format.enable": true
+
+}

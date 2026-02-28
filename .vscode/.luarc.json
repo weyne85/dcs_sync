@@ -1,0 +1,83 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+
+  // 1) DCS is widely treated as Lua 5.1 in the community; set LuaLS accordingly
+  "runtime.version": "Lua 5.1",
+
+  // 2) Reduces noise in many LUA codebases
+  
+
+  // 3) Explicit libraries (MOOSE + MIST + (optionally) dcs-lua-definitions library folder)
+  // Use forward slashes in JSON paths on Windows.
+  "workspace.library": [
+    "D:/Nextcloud/DCS-MissionCreating/Libraries/DCS-Scripting-Library-Updated-main",
+    "D:/Nextcloud/DCS-MissionCreating/Libraries/MissionScriptingTools",
+    "D:/Nextcloud/DCS-MissionCreating/Libraries/Moose"
+  ],
+
+  // 4) Avoid constant prompts about third-party libs (optional)
+  "workspace.checkThirdParty": "Apply",
+
+  // 5) Declare known DCS/MOOSE/MIST global names so "Undefined global" noise goes away
+  "diagnostics.globals": [
+    // DCS Singletons commonly documented
+    "env",
+    "timer",
+    "land",
+    "atmosphere",
+    "world",
+    "coalition",
+    "trigger",
+    "coord",
+    "missionCommands",
+    "airboss",
+
+    // DCS Enumerators commonly documented
+    "country",
+    "AI",
+    "radio",
+    "@param",
+    "Unit",
+    "ZoneCaptureCoalition",
+    "Protect",
+    "param",
+
+    // Your frameworks
+    "mist",
+
+    // Common MOOSE global you mentioned
+    "CALLSIGN",
+    "SPAWN",
+    "AIRBOSS",
+        "fouldist"
+  ],
+    "hover.enable": true,
+    "hover.previewFields": 50,
+    "hint.enable": true,
+    "hint.paramName": "All",
+    "hint.paramType": true,
+    "diagnostics.disable": [
+        "need-check-nil",
+        "trailing-space",
+        "duplicate-set-field",
+        "undefined-global",
+        "param-type-mismatch",
+        "assign-type-mismatch",
+        "cast-local-type",
+        "undefined-field",
+        "redundant-parameter",
+        "missing-fields",
+        "missing-parameter",
+        "redundant-return-value",
+        "redundant-value",
+        "ambiguity-1",
+        "inject-field",
+        "unbalanced-assignments",
+        "discard-returns",
+        "undefined-doc-name",
+        "undefined-doc-param"
+    ],
+
+  "format.enable": true
+
+}

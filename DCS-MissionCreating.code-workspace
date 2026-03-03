@@ -15,7 +15,7 @@
 			".vscode",
 			"D:\\Nextcloud\\DCS-MissionCreating\\Libraries\\MOOSE-master-ng\\Moose Development\\Debugger"
 		],
-		"Lua.workspace.preloadFileSize": 5000,
+		"Lua.workspace.preloadFileSize": 500000,
 		"Lua.runtime.version": "Lua 5.2",
 		"emmylua.workspace.enableReindex": false
 	}

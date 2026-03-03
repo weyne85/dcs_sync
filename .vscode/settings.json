@@ -9,6 +9,6 @@
         "D:\\Nextcloud\\DCS-MissionCreating\\Libraries\\MissionScriptingTools",
         "D:\\Nextcloud\\DCS-MissionCreating\\Libraries\\MOOSE-master-ng\\Moose Development\\Moose"
     ],
-    "Lua.workspace.preloadFileSize": 5000,
+    "Lua.workspace.preloadFileSize": 500000,
     "Lua.runtime.version": "Lua 5.2"
 }

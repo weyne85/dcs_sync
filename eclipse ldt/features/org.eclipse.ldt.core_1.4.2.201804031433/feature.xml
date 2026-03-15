@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.ldt.core"
+      label="%featureName"
+      version="1.4.2.201804031433"
+      provider-name="%providerName"
+      plugin="org.eclipse.ldt.branding">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="license.html">
+      %license
+   </license>
+
+   <requires>
+      <import plugin="org.eclipse.ui" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.text" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.debug.ui" version="5.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.launching" version="5.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.core" version="5.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.ui" version="5.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.text" version="3.5.0" match="compatible"/>
+      <import plugin="org.apache.commons.io"/>
+      <import plugin="org.apache.commons.lang"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.ldt.doc.user"
+         download-size="718"
+         install-size="805"
+         version="1.1.0.201804031433"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ldt.metalua"
+         download-size="118"
+         install-size="365"
+         version="1.1.0.201804031433"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ldt.ui"
+         download-size="307"
+         install-size="595"
+         version="1.3.0.201804031433"
+         unpack="false"/>
+
+   <plugin
+         id="com.naef.jnlua"
+         download-size="143"
+         install-size="265"
+         version="0.9.1.201804031433"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ldt.debug.core"
+         download-size="150"
+         install-size="361"
+         version="1.2.0.201804031433"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ldt.debug.ui"
+         download-size="112"
+         install-size="229"
+         version="1.1.0.201804031433"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ldt"
+         download-size="230"
+         install-size="555"
+         version="1.3.0.201804031433"
+         unpack="false"/>
+
+   <plugin
+         id="com.cforcoding.jmd"
+         download-size="47"
+         install-size="83"
+         version="0.8.1.201804031433"
+         unpack="false"/>
+
+   <plugin
+         id="com.naef.jnlua.linux"
+         os="linux"
+         arch="x86"
+         download-size="102"
+         install-size="224"
+         version="0.9.1.201804031433"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="com.naef.jnlua.linux64"
+         os="linux"
+         arch="x86_64"
+         download-size="112"
+         install-size="256"
+         version="0.9.1.201804031433"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="com.naef.jnlua.macosx"
+         os="macosx"
+         arch="x86_64"
+         download-size="181"
+         install-size="443"
+         version="0.9.1.201804031433"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="com.naef.jnlua.windows"
+         os="win32"
+         arch="x86"
+         download-size="104"
+         install-size="227"
+         version="0.9.1.201804031433"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="com.naef.jnlua.windows64"
+         os="win32"
+         arch="x86_64"
+         download-size="162"
+         install-size="380"
+         version="0.9.1.201804031433"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ldt.branding"
+         download-size="337"
+         install-size="1103"
+         version="1.1.0.201804031433"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ldt.support.lua51"
+         download-size="92"
+         install-size="231"
+         version="1.1.0.201804031433"
+         unpack="false"/>
+
+</feature>

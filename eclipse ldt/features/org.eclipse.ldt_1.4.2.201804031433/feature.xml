@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.ldt"
+      label="%featureName"
+      version="1.4.2.201804031433"
+      provider-name="%providerName"
+      plugin="org.eclipse.ldt.branding">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="license.html">
+      %license
+   </license>
+
+   <includes
+         id="org.eclipse.ldt.core"
+         version="1.4.2.201804031433"/>
+
+   <includes
+         id="org.eclipse.ldt.lua52"
+         version="1.4.2.201804031433"/>
+
+   <requires>
+      <import plugin="org.eclipse.ui" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.resources" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.core.runtime" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.text" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.debug.ui" version="5.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.launching" version="5.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.core" version="5.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.dltk.ui" version="5.2.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.jface.text" version="3.5.0" match="compatible"/>
+      <import plugin="org.apache.commons.io"/>
+      <import plugin="org.apache.commons.lang"/>
+   </requires>
+
+</feature>

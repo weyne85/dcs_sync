@@ -12,7 +12,8 @@
   "workspace.library": [
     "D:/Nextcloud/DCS-MissionCreating/Libraries/DCS-Scripting-Library-Updated-main",
     "D:/Nextcloud/DCS-MissionCreating/Libraries/MissionScriptingTools",
-    "D:/Nextcloud/DCS-MissionCreating/Libraries/Moose"
+    "D:/Nextcloud/DCS-MissionCreating/Libraries/Moose",
+        "${3rd}/lfs/library"
   ],
 
   // 4) Avoid constant prompts about third-party libs (optional)
@@ -49,7 +50,8 @@
     "CALLSIGN",
     "SPAWN",
     "AIRBOSS",
-        "fouldist"
+        "fouldist",
+        "lfs"
   ],
     "hover.enable": true,
     "hover.previewFields": 50,
